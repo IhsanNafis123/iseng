@@ -1,0 +1,61 @@
+{
+  "name": "ghostgpt-code",
+  "displayName": "GhostGPT Code",
+  "description": "Generate kode lengkap dengan GhostGPT.io dan aplikasikan langsung di VS Code",
+  "version": "1.0.0",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": ["Programming Languages", "AI"],
+  "keywords": ["ghostgpt", "ai", "code generator", "chatbot"],
+  "activationEvents": ["onCommand:ghostgpt-code.generateCode", "onCommand:ghostgpt-code.chat"],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "ghostgpt-code.generateCode",
+        "title": "GhostGPT: Generate Code",
+        "category": "GhostGPT"
+      },
+      {
+        "command": "ghostgpt-code.chat",
+        "title": "GhostGPT: Chat",
+        "category": "GhostGPT"
+      },
+      {
+        "command": "ghostgpt-code.setApiKey",
+        "title": "GhostGPT: Set API Key",
+        "category": "GhostGPT"
+      }
+    ],
+    "configuration": {
+      "title": "GhostGPT Code",
+      "properties": {
+        "ghostgpt-code.apiKey": {
+          "type": "string",
+          "default": "",
+          "description": "API Key GhostGPT (dapatkan di ghostgpt.io)",
+          "scope": "window"
+        },
+        "ghostgpt-code.baseUrl": {
+          "type": "string",
+          "default": "https://api.ghostgpt.io/v1",
+          "description": "Base URL API GhostGPT",
+          "scope": "window"
+        },
+        "ghostgpt-code.model": {
+          "type": "string",
+          "default": "ghostgpt",
+          "description": "Model GhostGPT",
+          "scope": "window"
+        },
+        "ghostgpt-code.temperature": {
+          "type": "number",
+          "default": 0.7,
+          "description": "Temperature (kreativitas) 0.0 - 2.0",
+          "scope": "window"
+        }
+      }
+    }
+  }
+}
